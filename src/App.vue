@@ -26,4 +26,6 @@ import Footer from './components/Footer.vue'
 
 <style lang="scss">
 
+@use './scss/main.scss'
+
 </style>

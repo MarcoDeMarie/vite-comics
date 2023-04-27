@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div>main</div>
+  <div class="container">main</div>
 </template>
 
 <style>
