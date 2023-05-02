@@ -1,28 +1,84 @@
 <script>
+import TvSeries from './partials/series.vue'
+import comics from '../data/dc-comics.json'
+
   export default {
-    name: 'Main'
+    name: 'Main',
+    data(){
+      return{
+        comics
+      }
+    },
+    components:{
+      TvSeries
+
+    }
   }
 </script>
 
 <template>
-  <div class="main">
-    MAIN
-  </div>
+  <main>
+    <div class="jumbotron"></div>
+    <div class="container">
+      <div class="series">
+        <h1>CURRENT SERIES</h1>
+        <div class="wrapper">
+          <TvSeries 
+          v-for="(comic, index) in comics"
+          :key="index"
+          :image="comic.thumb"
+          :serieTitle="comic.series"
+          />
+        </div>
+      </div>
+    </div>
+  </main>
   
+
 </template>
 
 <style lang="scss" scoped>
 @use '../scss/general/generals' as *;
 @use '../scss/general/variables' as *;
 
-.main{
-  height: 200px;
-  background-color: black;
-  color: white;
-  font-size: 30px;
+main{
+  background-color: $main-bg;
+}
+h1{
+  position: absolute;
+  font-size: 25px;
+  color: $footer-title;
+  background-color: $navbar-hover;
+  padding: 15px 25px 15px 25px;
+  top: 465px;
+  left: 240px;
+}
+
+.jumbotron{
+  height: 400px;
+  background-image: url('/img/jumbotron.jpg');
+}
+
+.wrapper{
+  height: 670px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 55px;
+}
+
+.card{
+  height: 200px;
+  width: 200px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  p{
+    color: $series-name;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 
