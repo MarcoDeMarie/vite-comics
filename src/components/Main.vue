@@ -11,7 +11,6 @@ import comics from '../data/dc-comics.json'
     },
     components:{
       TvSeries
-
     }
   }
 </script>
@@ -30,6 +29,8 @@ import comics from '../data/dc-comics.json'
           :serieTitle="comic.series"
           />
         </div>
+        <div class="container button"><button>LOAD MORE</button></div>
+        
       </div>
     </div>
   </main>
@@ -79,6 +80,17 @@ h1{
     display: flex;
     justify-content: center;
   }
+}
+.button{
+  display: flex;
+  justify-content: center;
+}
+button{
+  background-color: $navbar-hover;
+  color: $footer-title;
+  padding: 10px 60px 10px 60px;
+  border: 1px solid $navbar-hover;
+  margin-bottom: 20px;
 }
 
 
